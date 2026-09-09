@@ -5,6 +5,17 @@ import pandas as pd
 from PIL import Image
 import tensorflow as tf
 from tensorflow import keras
+import matplotlib.font_manager as fm
+import matplotlib.pyplot as plt
+
+# 리포지토리 내부 폰트 파일 경로 지정
+font_path = "fonts/NanumGothic.ttf"
+font_prop = fm.FontProperties(fname=font_path)
+
+# 전역 기본 폰트 적용 및 마이너스 기호 깨짐 방지
+plt.rc("font", family=font_prop.get_name())
+plt.rcParams["axes.unicode_minus"] = False
+
 
 # ── 1. 페이지 설정 ─────────────────────────────────────────────────
 st.set_page_config(
